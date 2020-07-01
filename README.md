@@ -3,6 +3,8 @@
 To run these scripts both AIPS and CASA (ver>=5.2) are required. 
 Runs for Band 3, 4 and 5 uGMRT data.
 
+Uses AIPS to carry out all the calibration and few rounds of imaging and sel-calibration, after which the final imaging is carried out in CASA using MT-MFS algorithm. CASA automatic flagging algorithms, namely 'tfcrop' and 'rflag' are also made use of.
+
 A sample command to run the scripts is given below
 
 nohup ~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscrptwriter_pol_trial_ver/runme.py foldername 935 > folder.out &
