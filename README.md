@@ -13,8 +13,11 @@ It uses AIPS to carry out all the calibration and few rounds of imaging and sel-
 ## Running the scripts
 A sample command to run the scripts is given below
 ```
-~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscriptwriter/runme.py foldername 101 > folder.out &
+nohup ~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscriptwriter/runme.py foldername 101 > folder.out &
 ```
+### Meaning of the commands
+
+nohup ---> is optional, to run the code in the background
 
 runme.py ---> is the code to be run from the list of scripts
 
