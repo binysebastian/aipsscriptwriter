@@ -24,6 +24,8 @@ kill = lambda process: process.kill()
 
 home = expanduser("~")
 
+pr=2
+
 k= os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) # script directory
 
 ind=k[::-1].find('/')
