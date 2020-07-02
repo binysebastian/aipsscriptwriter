@@ -257,11 +257,11 @@ fin.close()
 
 
 
-writethat = open(home+'/.aips/RUN/SP'+userid+'.'+userid,"w")
+writethat = open(home+'/.aips/RUN/STOP.'+userid,"w")
 writethat.write('$ \n')
 writethat.write("OPTELL     'CHAN'      \n")
 writethat.write("TASK       'IMAGR'     \n")
-writethat.write("NUMTELL       1        \n")
+writethat.write("NUMTELL       1       \n")
 writethat.write("tell imagr niter 10000 \n")
 writethat.write("tell imagr niter 10000 \n")
 writethat.write("tell imagr niter 10000 \n")
