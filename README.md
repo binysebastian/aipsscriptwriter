@@ -25,7 +25,7 @@ nohup ~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscriptwriter/runme.py folde
 
    * 101----> AIPS userid
 
-   * folder.out ---> output file
+   * folder.out --->  output file (optional)
 
 For more options see and edit inputs.py. For example, one could provide a user written flag file in inputs.py
 For even more flexibility edit aips_script_write.py
