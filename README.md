@@ -5,7 +5,7 @@ It uses AIPS to carry out all the calibration and few rounds of imaging and sel-
 
 ## Requirements
 
-*  AIPS (works in version 12 and 13), other versions have to be tested.
+*  AIPS (works in version 12 and 13), the codes might work in newer versions as well.
 *  CASA (ver>=5.2) are required. 
 
 
