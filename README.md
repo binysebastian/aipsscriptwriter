@@ -32,5 +32,5 @@ To access all the files, simply login to aips with the userid you provided in th
 
 ### Possible error
 
-Task 'imagr' may take a long time to stop in which case, edit the stop.sh file by putting the corresponding userid and run it.
+Task 'imagr' may take a long time to stop in which case, edit the bash script 'stop.sh' in the output folder file by putting the corresponding userid and run it.
 Currently won't run parallel.
