@@ -262,9 +262,9 @@ writethat.write('$ \n')
 writethat.write("OPTELL     'CHAN'      \n")
 writethat.write("TASK       'IMAGR'     \n")
 writethat.write("NUMTELL       "+str(pr)+"       \n")
-writethat.write("tell imagr niter 10000 \n")
-writethat.write("tell imagr niter 10000 \n")
-writethat.write("tell imagr niter 10000 \n")
+writethat.write("tell imagr niter 0 \n")
+writethat.write("tell imagr niter 0 \n")
+writethat.write("tell imagr niter 0 \n")
 
 writethat.close()
 
