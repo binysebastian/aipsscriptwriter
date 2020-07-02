@@ -3,10 +3,10 @@
 This is a set of scripts to carry out the uGMRT continuum data analyis. It runs for Band 3, 4 and 5 uGMRT data.
 It uses AIPS to carry out all the calibration and few rounds of imaging and sel-calibration, after which the final imaging is carried out in CASA using MT-MFS algorithm. CASA automatic flagging algorithms, namely 'tfcrop' and 'rflag' are also made use of.
 
-##Requirements
+## Requirements
 
-*AIPS 
-*CASA (ver>=5.2) are required. 
+*  AIPS (works in version 12 and 13), other versions have to be tested.
+*  CASA (ver>=5.2) are required. 
 
 
 
