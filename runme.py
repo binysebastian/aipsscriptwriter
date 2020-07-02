@@ -228,10 +228,13 @@ for k in files:
 	    name = name[:-5]
 
 	msname=msfolder+name+'.ms'
-	chakka=folder+k
+	fitsfile_name=folder+k
+	os.stat(fitsfile_name)
+	#os.stat_result(st_mode=33188, st_ino=6419862, st_dev=16777220, st_nlink=1, st_uid=501, st_gid=20, st_size=1564, st_atime=1584299303, st_mtime=1584299400, st_ctime=1584299400)
+	filesize=os.stat(fitsfile_name).st_size
 
 	default(importuvfits)
-	fitsfile=chakka
+	fitsfile=fitsfile_name
 	
 	
 	vis=msname
@@ -302,7 +305,6 @@ writethat.close()
 os.system('chmod +x '+outputfolder+'/socode.sh')
 
 
-
 os.system('rm -rf '+outfolder+'ms')
 p=[]
 write=[None]*lenfiles
@@ -354,16 +356,40 @@ for j in range(lenfiles):
 	os.system('rm -rf '+kkk)
 
 
-
-
 	p.append(subprocess.Popen(['. '+outputfolder+'/socode.sh'],stdout=f,stdin=None,shell=True))
 	time.sleep(60)
 	p[j].communicate()
+
+writethat = open(''+outputfolder+'/stop.sh',"w")
+writethat.write(' \n')
+writethat.write('#!/bin/sh \n')
+if os.path.exists(home+'/.bashrc'):
+	writethat.write('. ~/.bashrc \n')
+writethat.write('export BOX='+home+'/.boxfiles'+'\n')
+writethat.write('export OUT='+outputfolder+'\n')
+writethat.write('export INP='+outfolder+'\n')
+writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
+if os.path.exists(home+'/runme'):
+	writethat.write('. ~/runme \n')
+writethat.write('aips notv pr=1 << XXX \n')
+writethat.write(str(num4)+'\n')
+readthat=open(home+'/.aips/RUN/STOP.'+userid)	
+for line in readthat:
+	writethat.write(line)
+readthat.close()	
+writethat.write('kleenex \n')
+writethat.write('XXX \n')
+writethat.close()
+
+os.system('chmod +x '+outputfolder+'/stop.sh')
+
+
+
 for k in range(lenfiles):	
 	p[k].communicate()
 
-nsigma=10	
-for manga in range(0):
+nsigma=5
+for manga in range(1):
 	for j in range(lenfiles):
 		
 		num4=num3+j
@@ -795,10 +821,6 @@ for m in range(max(linescript)):
 				#print userid 
 		
 
-
-
-			
-
 			writethat = open(''+outputfolder+'/socode.sh',"w")
 			writethat.write(' \n')
 		
@@ -824,48 +846,10 @@ for m in range(max(linescript)):
 			writethat.write('kleenex \n')
 			writethat.write('XXX \n')
 			writethat.close()
-
-
-		
 	
-		
 		
 			p[j]=subprocess.Popen(['. '+outputfolder+'/socode.sh'],stdout=f,stdin=None,shell=True)
 			
-			poll=p[j].poll()
-			timestamp=15.*60.
-			scaled=filesize/1e10
-			for ij in range(288):
-				time.sleep(scaled*timestamp)
-				if not poll==None:
-					break
-				elif (ij+1)%96==0:
-					writethat = open(''+outputfolder+'/socode_del.sh',"w")
-					writethat.write(' \n')
-					writethat.write('#!/bin/sh \n')
-					if os.path.exists(home+'/.bashrc'):
-						writethat.write('. ~/.bashrc \n')
-					writethat.write('export BOX='+home+'/.boxfiles'+'\n')
-					writethat.write('export OUT='+outputfolder+'\n')
-					writethat.write('export INP='+outfolder+'\n')
-					writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
-					if os.path.exists(home+'/runme'):
-						writethat.write('. ~/runme \n')
-					writethat.write('aips notv pr=1 << XXX \n')
-					writethat.write(str(num4)+'\n')
-					readthat=open(home+'/.aips/RUN/SP'+userid+'.'+userid)	
-					for line in readthat:
-						writethat.write(line)
-					readthat.close()	
-					writethat.write('kleenex \n')
-					writethat.write('XXX \n')
-					writethat.close()
-					stpsubp=subprocess.Popen(['. '+outputfolder+'/socode_del.sh'],stdout=f,stdin=None,shell=True)
-					stpsubp.communicate()
-			if ij==287:
-				my_timer = Timer(5, kill, [p[j]])
-				my_timer.cancel()
-			os.system('rm -rf'+outputfolder+'/socode_del.sh')	
 			p[j].communicate()
 			time.sleep(60)
 
