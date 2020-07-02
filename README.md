@@ -34,3 +34,17 @@ To access all the files, simply login to aips with the userid you provided in th
 
 Task 'imagr' may take a long time to stop in which case, edit the bash script 'stop.sh' in the output folder file by putting the corresponding userid and run it.
 Currently won't run in parallel.
+
+## Acknowledgements
+
+Parts of the codes are inspired from initial versions of CASA EVLA pipeline. 
+The data reduction steps in AIPS are those generally followed by the radio astronomy community at NCRA.
+I thank Ishwara Chandra for many discussions on AIPS data analysis and his help page,
+http://www.ncra.tifr.res.in:8081/~ishwar/aips_help.html
+Other documents referred include AIPS.INFO (circulated for radio astronomy schools), http://www.ncra.tifr.res.in/~ruta/gmrt_workshop/aritra_sambit.pdf and http://gmrt.ncra.tifr.res.in/~astrosupp/docs/aips-pol-gmrt-v2.pdf (thanks to Nimisha Kantharia).
+
+
+
+
+
+
