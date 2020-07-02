@@ -388,7 +388,7 @@ os.system('chmod +x '+outputfolder+'/stop.sh')
 for k in range(lenfiles):	
 	p[k].communicate()
 
-nsigma=5
+nsigma=8
 for manga in range(1):
 	for j in range(lenfiles):
 		
