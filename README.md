@@ -26,6 +26,10 @@ For even more flexibility edit aips_script_write.py
 
 An output folder is created with the name, foldername+'out'. The details about the observation, userid, channels averaged etc can be found here. The final image and uv files can be found in folder named 'im' and 'uv' respectively. 
 
+To access all the files, simply login to aips with the userid you provided in the beginning.
+
+
+
 ### Possible error
 
 Task 'imagr' may take a long time to stop in which case, edit the stop.sh file by putting the corresponding userid and run it.
