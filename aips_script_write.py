@@ -1186,7 +1186,8 @@ writethat.write('outfgver 1 \n')
 
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
-writethat.write('go flagr; wait flagr; end\n \n')
+if fracband>0.12:
+	writethat.write('go flagr; wait flagr; end\n \n')
 
 
 
@@ -1204,7 +1205,8 @@ writethat.write("SCUTOFF "+str(10*mf*sens)+" \n")
 writethat.write("STOKE 'RR' \n")
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
-writethat.write('go rflag; wait rflag; end\n \n')
+if fracband>0.12:
+	writethat.write('go rflag; wait rflag; end\n \n')
 
 writethat.write("task 'rflag' \n")
 writethat.write('default \n')
@@ -1219,7 +1221,8 @@ writethat.write("SCUTOFF "+str(10*mf*sens)+" \n")
 writethat.write("STOKE 'LL' \n")
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
-writethat.write('go rflag; wait rflag; end\n \n')
+if fracband>0.12:
+	writethat.write('go rflag; wait rflag; end\n \n')
 
 
 writethat.write("task 'rflag' \n")
@@ -1235,7 +1238,8 @@ writethat.write("SCUTOFF "+str(15*mf*sens)+" \n")
 writethat.write("STOKE 'RR' \n")
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
-writethat.write('go rflag; wait rflag; end\n \n')
+if fracband>0.12:
+	writethat.write('go rflag; wait rflag; end\n \n')
 
 writethat.write("task 'rflag' \n")
 writethat.write('default \n')
@@ -1250,7 +1254,8 @@ writethat.write("SCUTOFF "+str(15*mf*sens)+" \n")
 writethat.write("STOKE 'LL' \n")
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
-writethat.write('go rflag; wait rflag; end\n \n')
+if fracband>0.12:
+	writethat.write('go rflag; wait rflag; end\n \n')
 
 
 
