@@ -337,7 +337,7 @@ for j in range(lenfiles):
 	writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 	if os.path.exists(home+'/runme'):
 		writethat.write('. ~/runme \n')
-	writethat.write('aips notv pr=1 << XXX \n')
+	writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 	writethat.write(str(num4)+'\n')
 	readthat=open(home+'/.aips/RUN/E1'+userid+'.'+userid)	
 	for line in readthat:
@@ -371,7 +371,7 @@ writethat.write('export INP='+outfolder+'\n')
 writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 if os.path.exists(home+'/runme'):
 	writethat.write('. ~/runme \n')
-writethat.write('aips notv pr=1 << XXX \n')
+writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 writethat.write(str(num4)+'\n')
 readthat=open(home+'/.aips/RUN/STOP.'+userid)	
 for line in readthat:
@@ -434,7 +434,7 @@ for manga in range(1):
 		writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 		if os.path.exists(home+'/runme'):
 			writethat.write('. ~/runme \n')
-		writethat.write('aips notv pr=1 << XXX \n')
+		writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 		writethat.write(str(num4)+'\n')
 		readthat=open(home+'/.aips/RUN/E2'+userid+'.'+userid)	
 		for line in readthat:
@@ -504,7 +504,7 @@ if choice==2:
 		writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 		if os.path.exists(home+'/runme'):
 			writethat.write('. ~/runme \n')
-		writethat.write('aips notv pr=1 << XXX \n')
+		writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 		writethat.write(str(num4)+'\n')
 		readthat=open(home+'/.aips/RUN/E2'+userid+'.'+userid)	
 		for line in readthat:
@@ -576,7 +576,7 @@ for j in range(lenfiles):
 	writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 	if os.path.exists(home+'/runme'):
 		writethat.write('. ~/runme \n')
-	writethat.write('aips notv pr=1 << XXX \n')
+	writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 	writethat.write(str(num4)+'\n')
 	readthat=open(home+'/.aips/RUN/E3'+userid+'.'+userid)	
 	for line in readthat:
@@ -644,7 +644,7 @@ for j in range(lenfiles):
 		writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 		if os.path.exists(home+'/runme'):
 			writethat.write('. ~/runme \n')
-		writethat.write('aips notv pr=1 << XXX \n')
+		writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 		writethat.write(str(num4)+'\n')
 		readthat=open(home+'/.aips/RUN/E3A'+userid+'.'+userid)	
 		for line in readthat:
@@ -769,7 +769,7 @@ for j in range(lenfiles):
 	writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 	if os.path.exists(home+'/runme'):
 		writethat.write('. ~/runme \n')
-	writethat.write('aips notv pr=1 << XXX \n')
+	writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 	writethat.write(str(num4)+'\n')
 	readthat=open(home+'/.aips/RUN/E4'+userid+'.'+userid)	
 	for line in readthat:
@@ -836,7 +836,7 @@ for m in range(max(linescript)):
 			writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 			if os.path.exists(home+'/runme'):
 				writethat.write('. ~/runme \n')
-			writethat.write('aips notv pr=1 << XXX \n')
+			writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 			writethat.write(str(num4)+'\n')
 			readthat=open(home+'/.aips/RUN/E'+userid+str(m+1)+'.'+userid)	
 			for line in readthat:
@@ -895,7 +895,7 @@ for j in range(lenfiles):
 	writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 	if os.path.exists(home+'/runme'):
 		writethat.write('. ~/runme \n')
-	writethat.write('aips notv pr=1 << XXX \n')
+	writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 	writethat.write(str(num4)+'\n')
 	readthat=open(home+'/.aips/RUN/LOGS'+userid+'.'+userid)	
 	for line in readthat:
@@ -952,7 +952,7 @@ if weighting == 'briggs':
 					writethat.write('export RUNFIL=~/.aips/RUN'+'\n')
 					if os.path.exists(home+'/runme'):
 						writethat.write('. ~/runme \n')
-					writethat.write('aips notv pr=1 << XXX \n')
+					writethat.write('aips notv pr='+str(pr)+' << XXX \n')
 					writethat.write(str(num4)+'\n')
 					readthat=open(home+'/.aips/RUN/SCRIPT'+str(m+1)+'.'+userid)	
 					for line in readthat:
