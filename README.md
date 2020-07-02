@@ -47,6 +47,7 @@ The data reduction steps in AIPS are those generally followed by the radio astro
 I thank Ishwara Chandra for the many discussions on AIPS data analysis and his help page,
 http://www.ncra.tifr.res.in:8081/~ishwar/aips_help.html.
 Other documents referred include AIPS.INFO (circulated during radio astronomy schools), http://www.ncra.tifr.res.in/~ruta/gmrt_workshop/aritra_sambit.pdf and http://gmrt.ncra.tifr.res.in/~astrosupp/docs/aips-pol-gmrt-v2.pdf (thanks to Nimisha Kantharia).
+Thanks to Preeti Kharb and Silpa Sasikumar for discussions on GMRT polarization.
 I also thank Ruchika Seth for her contributions.
 
 
