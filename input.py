@@ -6,3 +6,4 @@ usepacal='n' #option y/n keep it n if you don't wan to use polarized cal for est
 usemidchan='n'#option y/n keep it n if you don't wan to use this midchan
 flagfile='/home/biny/FLAG.FLG'
 useflagfile='n'#option y/n keep it n if you don't wan to use this midchan
+pr=2 # AIPS TV number
