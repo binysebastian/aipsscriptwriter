@@ -1,21 +1,26 @@
 # aipsscriptwriter
 
-To run these scripts both AIPS and CASA (ver>=5.2) are required. 
-Runs for Band 3, 4 and 5 uGMRT data.
+This is a set of scripts to carry out the uGMRT continuum data analyis. It runs for Band 3, 4 and 5 uGMRT data.
+It uses AIPS to carry out all the calibration and few rounds of imaging and sel-calibration, after which the final imaging is carried out in CASA using MT-MFS algorithm. CASA automatic flagging algorithms, namely 'tfcrop' and 'rflag' are also made use of.
 
-Uses AIPS to carry out all the calibration and few rounds of imaging and sel-calibration, after which the final imaging is carried out in CASA using MT-MFS algorithm. CASA automatic flagging algorithms, namely 'tfcrop' and 'rflag' are also made use of.
+##Requirements
+
+*AIPS 
+*CASA (ver>=5.2) are required. 
+
+
 
 ## Running the scripts
 A sample command to run the scripts is given below
-
-nohup ~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscrptwriter_pol_trial_ver/runme.py foldername 935 > folder.out &
-
+```
+~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscriptwriter/runme.py foldername 101 > folder.out &
+```
 
 runme.py ---> is the code to be run from the list of scripts
 
 foldername---> folder containing the fits or lta files, make sure there are no files other than the input fits files or flag files (from GMRT) in the folder. Also make sure that this folder is not the current working directory while running the pipeline.
 
-935----> AIPS userid
+101----> AIPS userid
 
 folder.out ---> output file
 
