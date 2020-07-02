@@ -17,15 +17,15 @@ nohup ~/casa-release-5.5.0-149.el7/bin/casa -c ~/aipsscriptwriter/runme.py folde
 ```
 ### Meaning of the commands
 
-** nohup ---> is optional, to run the code in the background
+   * nohup ---> is optional, to run the code in the background
 
-** runme.py ---> is the code to be run from the list of scripts
+   * runme.py ---> is the code to be run from the list of scripts
 
-** foldername---> folder containing the fits or lta files, make sure there are no files other than the input fits files or flag files (from GMRT) in the folder. Also make sure that this folder is not the current working directory while running the pipeline.
+   * foldername---> folder containing the fits or lta files, make sure there are no files other than the input fits files or flag files (from GMRT) in the folder. Also make sure that this folder is not the current working directory while running the pipeline.
 
-** 101----> AIPS userid
+   * 101----> AIPS userid
 
-** folder.out ---> output file
+   * folder.out ---> output file
 
 For more options see and edit inputs.py.
 For even more flexibility edit aips_script_write.py
