@@ -6,4 +6,5 @@ usepacal='n' #option y/n keep it n if you don't wan to use polarized cal for est
 usemidchan='n'#option y/n keep it n if you don't wan to use this midchan
 flagfile='/home/biny/FLAG.FLG'
 useflagfile='n'#option y/n keep it n if you don't wan to use this midchan
-
+freq_cl=1 # split the entire band into so many chunks for imaging in aips
+usefreq_cl='y'
