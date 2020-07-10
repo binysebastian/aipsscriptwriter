@@ -53,18 +53,18 @@ for i in range(1,noflux+1):
                 meanlevel[y]=two_band[j-1]
                 field_lim=200
             elif (2.8<freq<4.6):
-		if not usefreq_cl='y'
+		if not usefreq_cl=='y'
                 	freq_cl=3
 		field_lim=160
                 meanlevel[y]=p_band[j-1]        
             elif (4.6<freq<9.3):
-		if not usefreq_cl='y'		
+		if not usefreq_cl=='y'		
                 	freq_cl=2
                 field_lim=100
                 meanlevel[y]=m_band[j-1]  
             elif (9.3<freq<15):
                 calprm7=3
-		if not usefreq_cl='y'		
+		if not usefreq_cl=='y'		
                 	freq_cl=4
                 calprm9=1
                 meanlevel[y]=l_band[j-1]        
