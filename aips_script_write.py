@@ -3694,7 +3694,6 @@ for i in range(1,notarg+1):
     writethat.write("SCUTOFF "+str(10*mf*sens)+" \n")
     writethat.write("STOKE 'LL' \n")
     writethat.write('dowait true \n')
-    #writethat.write('go rflag; wait rflag; end\n \n')
 
 
     writethat.write("task 'rflag' \n")
