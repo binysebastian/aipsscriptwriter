@@ -290,7 +290,7 @@ conorq='q'
 
 
 num3=num3-lenfiles
-
+num4=num3
 writethat = open(''+outputfolder+'/socode.sh',"w")
 writethat.write(' \n')
 if os.path.exists(home+'/.bashrc'):
