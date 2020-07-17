@@ -454,6 +454,19 @@ writethat.write("SAMPTYPE 'mwf' \n")
 writethat.write('dowait true \n')
 writethat.write('go clcal; wait clcal; end \n\n')
 
+
+writethat.write("task 'prtab' \n")
+writethat.write("default \n")
+writethat.write("getn 1 \n")
+writethat.write("inext 'su' \n")
+writethat.write("docrt -1 \n")
+writethat.write("OUTPRINT   'OUT:"+name1+".fluxes \n")
+writethat.write('dowait true \n')
+writethat.write('go prtab; wait prtab; end \n\n')
+
+
+
+
 writethat.write("task 'clip' \n")
 writethat.write('default \n')
 writethat.write('getn 1 \n')
@@ -1911,6 +1924,34 @@ if len(pacal_fiel)>0:
     writethat.write("os.system('rm -rf '+k)\n")
     writethat.write("os.system('mv '+k+'fin '+k)\n")
 
+if nodcal>0 and not usepacal=='y':
+
+    writethat.write("listname='"+outputfolder+"/"+name1+".fluxes'" +"\n")
+    writethat.write("fin=open(listname)" +"\n")
+    writethat.write("" +"\n")
+    writethat.write("flag=0" +"\n")
+    writethat.write("for j in fin:" +"\n")
+    writethat.write("     if '"+str(field_names[dcal_fiel[0]])+"' in j:" +"\n")
+    writethat.write("        fluxdcal=j[44:49]" +"\n")
+    writethat.write("        #print j[14:38]" +"\n")
+    writethat.write("        break" +"\n")
+    writethat.write("" +"\n")
+    writethat.write("fin.close()" +"\n")
+
+
+    writethat.write("k='"+home+"/.aips/RUN/E3"+userid+"."+userid+"'\n")
+    writethat.write("fin = open(k)\n")
+    writethat.write("fout = open(k+'fin', 'wt')\n")
+    writethat.write("#print k\n")
+    writethat.write("\n")
+    writethat.write("for line in fin:\n")
+    writethat.write("   newline=line    \n")
+    writethat.write("   newline=newline.replace('replacemeflux',fluxdcal)    \n")
+    writethat.write("   fout.write(newline)\n")
+    writethat.write("fout.close()\n")
+    writethat.write("fin.close()\n")
+    writethat.write("os.system('rm -rf '+k)\n")
+    writethat.write("os.system('mv '+k+'fin '+k)\n")
 
 
 
@@ -2385,6 +2426,7 @@ if npols==4:
             writethat.write("'"+field_names[y]+"'")
         writethat.write("'\n")
         writethat.write("domodel 1 \n")
+        writethat.write("pmodel replacemeflux 0 \n")
     else:
         for i in range(1,nopacal+1):
             x=(pacal_fiel[i-1])
@@ -2587,8 +2629,8 @@ if npols==4:
     writethat.write('dowait true \n')
     writethat.write("go uvflg; wait uvflg;\n")
 
-    writethat.write("task 'pcal' \n")
-    writethat.write("default \n")
+    writethat.write("tget pcal \n")
+    #writethat.write("default \n")
     writethat.write("getn 1 \n")
     writethat.write("inext 'pd' \n")
     writethat.write("extd \n")    
@@ -2607,6 +2649,8 @@ if npols==4:
             writethat.write("'"+field_names[y]+"'")
         writethat.write("'\n")
         writethat.write("domodel 1 \n")
+        #writethat.write("pmodel replacemeflux 0 \n")
+
     else:
         for i in range(1,nopacal+1):
             x=(pacal_fiel[i-1])
