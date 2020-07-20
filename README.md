@@ -34,6 +34,11 @@ For even more flexibility edit aips_script_write.py
 
 An output folder is created with the name, foldername+'out'. The details about the observation, userid, channels averaged etc can be found here. The final image and uv files can be found in folder named 'im' and 'uv' respectively. 
 
+If you using 'nohup' and you wish to see the logs, enter the output folder. Here, you will be able to see the file 'output.txt' which records the aips output logs. You could see the logs in real time by 
+```
+tail -f output.txt
+```
+
 To access all the files, simply login to aips with the userid you provided in the beginning.
 
 
