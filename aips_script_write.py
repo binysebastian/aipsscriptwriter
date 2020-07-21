@@ -2152,6 +2152,7 @@ writethat.write("soltype 'L1R'"'\n')
 writethat.write('uvrange '+uvlow+' 0\n')
 writethat.write('refant '+refAnt+'\n')
 writethat.write('dowait true \n')
+writethat.write('doflag 1 \n')
 writethat.write('go calib; wait calib; end \n\n')
 if not (flux_field==phase_field) and not (phase_field==[]):
     writethat.write("tget clcal \n")
@@ -2304,6 +2305,7 @@ writethat.write("extd \n")
 
 writethat.write("tget calib \n")
 writethat.write('dowait true \n')
+writethat.write('doflag 1 \n')
 writethat.write("go calib ; wait calib\n")
 if not (flux_field==phase_field) and not (phase_field==[]):
     writethat.write("tget getjy \n")
