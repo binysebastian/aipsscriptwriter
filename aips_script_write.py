@@ -635,7 +635,8 @@ writethat.write("optype 'a&p' \n")
 writethat.write("inext 'sn' \n")
 #writethat.write("outfgver 1 \n")
 writethat.write('dowait true \n')
-#writethat.write('go snflg; wait snflg; end\n \n')
+if usesnflag_aips=='y':
+	writethat.write('go snflg; wait snflg; end\n \n')
 
 
 writethat.write('getn 1  \n')
@@ -743,7 +744,11 @@ for i in range(1,nophase+1):
     writethat.write("'"+field_names[y]+"'")
 writethat.write("'\n")
 writethat.write('aparm 100 '+str(mf*sens)+' '+str(mf*sens)+' 0 \n')
-writethat.write("outfgver 2 \n")
+if usesnflag_aips=='y':
+	writethat.write("outfgver 3 \n")
+else:
+	writethat.write("outfgver 2 \n")
+
 writethat.write('docal 1 \n')
 writethat.write('doband 3 \n')
 writethat.write('bpver 0 \n')
@@ -753,7 +758,10 @@ writethat.write('go flgit; wait flgit; end\n \n')
 writethat.write("task 'uvcop' \n")
 writethat.write('default \n')
 writethat.write('getn 1 \n')
-writethat.write("flagver 2 \n")
+if usesnflag_aips=='y':
+	writethat.write("flagver 3 \n")
+else:
+	writethat.write("flagver 2 \n")
 writethat.write('dowait true \n')
 writethat.write('go uvcop; wait uvcop; end\n \n')
 writethat.write('getn 1 ;clrstat; zap; recat \n \n')
