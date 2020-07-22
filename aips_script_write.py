@@ -635,7 +635,7 @@ writethat.write("optype 'a&p' \n")
 writethat.write("inext 'sn' \n")
 #writethat.write("outfgver 1 \n")
 writethat.write('dowait true \n')
-writethat.write('go snflg; wait snflg; end\n \n')
+#writethat.write('go snflg; wait snflg; end\n \n')
 
 
 writethat.write('getn 1  \n')
@@ -646,7 +646,7 @@ writethat.write("extd \n")
 
 writethat.write("tget calib \n")
 writethat.write('dowait true \n')
-#writethat.write('doflag 5 \n')
+writethat.write('doflag 5 \n')
 writethat.write("go calib ; wait calib\n")
 
 
@@ -2340,7 +2340,7 @@ writethat.write("extd \n")
 
 writethat.write("tget calib \n")
 writethat.write('dowait true \n')
-#writethat.write('doflag 5 \n')
+writethat.write('doflag 5 \n')
 writethat.write("go calib ; wait calib\n")
 
 
