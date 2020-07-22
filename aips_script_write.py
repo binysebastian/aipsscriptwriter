@@ -621,16 +621,44 @@ for loopn in range(5):
     writethat.write('go clip; wait clip; end\n \n')
 
 
-writethat.write("inext 'cl' \n")    
-writethat.write('extd \n')
-writethat.write("inext 'sn' \n")    
-writethat.write('extd \n')
-writethat.write("clrmsg \n")
+#writethat.write("inext 'cl' \n")    
+#writethat.write('extd \n')
+#writethat.write("inext 'sn' \n")    
+#writethat.write('extd \n')
+#writethat.write("clrmsg \n")
+
+writethat.write("task 'snflg' \n")
+writethat.write('default \n')
+writethat.write('getn 1 \n')
+writethat.write('dparm(8)=1 \n')
+writethat.write("optype 'a&p' \n")
+writethat.write("inext 'sn' \n")
+writethat.write('dowait true \n')
+writethat.write('go snflg; wait snflg; end\n \n')
+
+
+writethat.write('getn 1  \n')
+writethat.write("inext 'sn' \n")
+writethat.write("extd \n")
+writethat.write("inext 'cl' \n")
+writethat.write("extd \n")
 
 writethat.write("tget calib \n")
-writethat.write('getn 1 \n \n')
 writethat.write('dowait true \n')
-writethat.write('go calib; wait calib ; end\n\n')
+writethat.write('doflag 1 \n')
+writethat.write("go calib ; wait calib\n")
+
+
+
+#writethat.write("tget calib \n")
+#writethat.write('getn 1 \n \n')
+#writethat.write('dowait true \n')
+#writethat.write('go calib; wait calib ; end\n\n')
+
+
+
+
+
 if not (flux_field==phase_field) and not (phase_field==[]):
     writethat.write("tget clcal \n")
     writethat.write('getn 1 \n \n')
@@ -714,22 +742,21 @@ for i in range(1,nophase+1):
     writethat.write("'"+field_names[y]+"'")
 writethat.write("'\n")
 writethat.write('aparm 100 '+str(mf*sens)+' '+str(mf*sens)+' 0 \n')
-writethat.write("outfgver 1 \n")
+writethat.write("outfgver 2 \n")
 writethat.write('docal 1 \n')
 writethat.write('doband 3 \n')
 writethat.write('bpver 0 \n')
 writethat.write('dowait true \n')
 writethat.write('go flgit; wait flgit; end\n \n')
 
-if fracband>0.12:
-    writethat.write("task 'uvcop' \n")
-    writethat.write('default \n')
-    writethat.write('getn 1 \n')
-    writethat.write("flagver 1 \n")
-    writethat.write('dowait true \n')
-    writethat.write('go uvcop; wait uvcop; end\n \n')
-    writethat.write('getn 1 ;clrstat; zap; recat \n \n')
-    writethat.write('getn 1 \n \n')
+writethat.write("task 'uvcop' \n")
+writethat.write('default \n')
+writethat.write('getn 1 \n')
+writethat.write("flagver 2 \n")
+writethat.write('dowait true \n')
+writethat.write('go uvcop; wait uvcop; end\n \n')
+writethat.write('getn 1 ;clrstat; zap; recat \n \n')
+writethat.write('getn 1 \n \n')
 
 
 writethat.write("inext 'bp' \n")
@@ -2296,7 +2323,13 @@ for loopn in range(15):
 writethat.write("task 'snflg' \n")
 writethat.write('default \n')
 writethat.write('getn 2 \n')
+writethat.write('dparm(8)=1 \n')
+writethat.write("optype 'a&p' \n")
+writethat.write("inext 'sn' \n")
 writethat.write('dowait true \n')
+writethat.write('go snflg; wait snflg; end\n \n')
+
+
 writethat.write('getn 2  \n')
 writethat.write("inext 'sn' \n")
 writethat.write("extd \n")
@@ -2307,6 +2340,8 @@ writethat.write("tget calib \n")
 writethat.write('dowait true \n')
 writethat.write('doflag 1 \n')
 writethat.write("go calib ; wait calib\n")
+
+
 if not (flux_field==phase_field) and not (phase_field==[]):
     writethat.write("tget getjy \n")
     writethat.write('dowait true \n')
