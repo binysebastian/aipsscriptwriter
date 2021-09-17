@@ -5,9 +5,6 @@ calprm9=0
 execfile(pipepath+'input.py')
 from numpy import base_repr
 
-os.system('mkdir /temp30/temp')
-os.system('mkdir /temp30/temp/ASTRO5_1')
-os.system('touch /temp30/temp/ASTRO5_1/SPACE')
 if (channels[0]>1000):
     nplo = 6
 else:
